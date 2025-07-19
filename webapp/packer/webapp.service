@@ -1,0 +1,15 @@
+[Unit]
+Description=Using RDS with EC2
+After=network.target
+
+[Service]
+User=csye6225
+Group=csye6225
+Type=simple
+ConditionPathExists=/opt/webapp/.env
+WorkingDirectory=/opt/webapp
+ExecStart=/usr/bin/node /opt/webapp/index.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
